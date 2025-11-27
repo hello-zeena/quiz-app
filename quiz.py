@@ -13,8 +13,9 @@ def get_sheets():
         "https://www.googleapis.com/auth/drive",
     ]
     CREDS = Credentials.from_service_account_info(
-    st.secrets["gcp_service_account"]
-)
+        st.secrets["gcp_service_account"],
+        scopes=SCOPE
+    )
 
     client = gspread.authorize(CREDS)
     
